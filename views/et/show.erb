@@ -4,15 +4,18 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
   <body>
-    <h1>ET for <%= et.et.strftime("%d. %B %Y") %></h1>
-
-    <%= "Today is #{et.now.strftime("%d. %B %Y")}" %>
+    ET for <%= et.et.strftime("%d. %B %Y") %>
     <br/>
-    <%= "Your week changes on #{et.et.strftime("%A")}" %>
-    <br/><br/>
+    <%= "Today is #{et.now.strftime("%d. %B %Y")}" %>
+
+    <div class="week"><%= "#{et.week}/#{et.day}" %></div>
+
     <%= "#{et.weeks_left} weeks, #{et.days_left} days until ET" %>
     <br/>
-    <%= "<b>#{et.week}/#{et.day}</b>, #{et.week}th week" %>
+    <%= "#{et.week}th week" %>
+    <br/>
+    <%= "Your week changes on #{et.et.strftime("%A")}" %>
+
 
   </body>
 </html>
