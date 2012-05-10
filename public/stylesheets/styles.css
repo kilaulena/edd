@@ -1,0 +1,10 @@
+body {
+  font-size: 3em;
+  padding: 10px 20px;
+}
+
+.week {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 50px 0 50px 200px;
+}
