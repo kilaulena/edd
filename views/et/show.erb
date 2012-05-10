@@ -1,9 +1,19 @@
-<h3>ET for <%= et.et.strftime("%F") %></h3>
+<html>
+  <head>
+    <title>My EDD</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>ET for <%= et.et.strftime("%d. %B %Y") %></h1>
 
-<%= "Today is #{et.now.strftime("%F")}" %>
-<br/>
-<%= "Your week changes on #{et.et.strftime("%A")}" %>
-<br/>
-<%= "#{et.weeks_left} weeks, #{et.days_left} days until ET" %>
-<br/>
-<%= "#{et.week}/#{et.day}, #{et.week}th week" %>
+    <%= "Today is #{et.now.strftime("%d. %B %Y")}" %>
+    <br/>
+    <%= "Your week changes on #{et.et.strftime("%A")}" %>
+    <br/><br/>
+    <%= "#{et.weeks_left} weeks, #{et.days_left} days until ET" %>
+    <br/>
+    <%= "<b>#{et.week}/#{et.day}</b>, #{et.week}th week" %>
+
+  </body>
+</html>
+
