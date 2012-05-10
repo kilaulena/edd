@@ -29,4 +29,4 @@ class ET
   end
 end
 
-ET.new.show
+puts ET.new.show
