@@ -4,7 +4,11 @@
 
 <div class="week"><%= "#{edd.week}/#{edd.day}" %></div>
 
-<%= "#{edd.weeks_left} weeks, #{edd.days_left} days until EDD" %>
+<% if edd.now > edd.edd %>
+  <%= "EDD was #{-edd.weeks_left} weeks and #{-edd.days_left} days ago" %>
+<% else %>
+  <%= "#{edd.weeks_left} weeks, #{edd.days_left} days until EDD" %>
+<% end %>
 <br/>
 <%= "#{edd.week + 1}th week" %>
 <br/>

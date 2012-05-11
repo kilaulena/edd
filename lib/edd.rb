@@ -9,15 +9,27 @@ class EDD
     @edd = Date.new(year, month, day)
 
     difference = edd - now
+
+
     @days_left  = (difference % 7).to_i
     @weeks_left = ((difference - @days_left) / 7).to_i
 
+    if @now > @edd
+      @days_left  = -(7 - @days_left)
+      @weeks_left += 1
+    end
+
     if @days_left == 0
-      @week = 40 - @weeks_left
       @day = 0
+      @week = 40 - @weeks_left
     else
-      @week = 39 - @weeks_left
       @day = 7 - @days_left
+      @week = 39 - @weeks_left
+    end
+
+    if @now > @edd
+      @day -= 7
+      @week += 1
     end
   end
 end
