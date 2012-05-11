@@ -1,14 +1,14 @@
 #!/usr/bin/ruby
 require 'date'
 
-class ET
-  attr_accessor :now, :et, :weeks_left, :days_left, :week, :day
+class EDD
+  attr_accessor :now, :edd, :weeks_left, :days_left, :week, :day
 
   def initialize(year=Date.today.year, month=Date.today.month, day=Date.today.day)
     @now = Date.new(year, month, day)
-    @et = Date.new(2012,6,29)
+    @edd = Date.new(2012,6,29)
 
-    difference = et - now
+    difference = edd - now
     @days_left  = (difference % 7).to_i
     @weeks_left = ((difference - @days_left) / 7).to_i
 
@@ -22,11 +22,11 @@ class ET
   end
 
   def show
-    puts "Now: #{now.strftime("%D")}, ET: #{et.strftime("%D")}"
-    puts "Your week changes on #{et.strftime("%A")}"
-    puts "#{weeks_left} weeks, #{days_left} days until ET"
+    puts "Now: #{now.strftime("%D")}, EDD: #{edd.strftime("%D")}"
+    puts "Your week changes on #{edd.strftime("%A")}"
+    puts "#{weeks_left} weeks, #{days_left} days until EDD"
     puts "#{week}/#{day}, #{week}th week"
   end
 end
 
-puts ET.new.show
+puts EDD.new.show

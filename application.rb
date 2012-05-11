@@ -2,8 +2,8 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/reloader'
-require './et.rb'
+require './edd.rb'
 
 get '/' do
-  erb :"et/show", :locals => {:et => ET.new}
+  erb :"edd/show", :locals => {:edd => EDD.new}
 end
