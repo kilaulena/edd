@@ -4,9 +4,9 @@ require 'date'
 class EDD
   attr_accessor :now, :edd, :weeks_left, :days_left, :week, :day
 
-  def initialize(year, month, day)
-    @now = Date.new(year, month, day)
-    @edd = Date.new(2012,6,29)
+  def initialize(year, month, day, today=Date.today)
+    @now = Date.new(today.year, today.month, today.day)
+    @edd = Date.new(year, month, day)
 
     difference = edd - now
     @days_left  = (difference % 7).to_i
@@ -20,13 +20,5 @@ class EDD
       @day = 7 - @days_left
     end
   end
-
-  def show
-    puts "Now: #{now.strftime("%D")}, EDD: #{edd.strftime("%D")}"
-    puts "Your week changes on #{edd.strftime("%A")}"
-    puts "#{weeks_left} weeks, #{days_left} days until EDD"
-    puts "#{week}/#{day}, #{week + 1}th week"
-  end
 end
 
-puts EDD.new.show

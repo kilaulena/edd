@@ -1,0 +1,24 @@
+<form action='/' method="GET">
+  Day:
+  <select name="day">
+    <% (1..31).each do |day| %>
+      <option><%= day %></option>
+    <% end %>
+  </select>
+  <br/>
+  Month:
+  <select name="month">
+    <% (1..12).each do |month| %>
+      <option><%= month %></option>
+    <% end %>
+  </select>
+  <br/>
+  Year:
+  <select name="year">
+    <% (Date.today.year..Date.today.year+20).each do |year| %>
+      <option><%= year %></option>
+    <% end %>
+  </select>
+  <br/>
+  <input type="submit" value="Show" />
+</form>

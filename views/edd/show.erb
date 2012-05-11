@@ -1,22 +1,11 @@
-<html>
-  <head>
-    <title>My EDD</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
-  </head>
-  <body>
-    EDD for <%= edd.edd.strftime("%d. %B %Y") %>
-    <br/>
-    <%= "Today is #{edd.now.strftime("%d. %B %Y")}" %>
+<%= "EDD is #{edd.edd.strftime("%d. %B %Y")}" %>
+<br/>
+<%= "Today is #{edd.now.strftime("%d. %B %Y")}" %>
 
-    <div class="week"><%= "#{edd.week}/#{edd.day}" %></div>
+<div class="week"><%= "#{edd.week}/#{edd.day}" %></div>
 
-    <%= "#{edd.weeks_left} weeks, #{edd.days_left} days until EDD" %>
-    <br/>
-    <%= "#{edd.week + 1}th week" %>
-    <br/>
-    <%= "Your week changes on #{edd.edd.strftime("%A")}" %>
-
-
-  </body>
-</html>
-
+<%= "#{edd.weeks_left} weeks, #{edd.days_left} days until EDD" %>
+<br/>
+<%= "#{edd.week + 1}th week" %>
+<br/>
+<%= "Your week changes on #{edd.edd.strftime("%A")}" %>
