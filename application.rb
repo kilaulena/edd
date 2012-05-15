@@ -5,8 +5,11 @@ require 'sinatra/reloader'
 require './lib/edd.rb'
 
 get '/' do
-  if present?(params[:year]) && present?(params[:month]) && present?(params[:year])
-    erb :"edd/show", :locals => {:edd => EDD.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)}
+  if present?(params[:edd])
+    edd = Date.strptime(params[:edd], '%m/%d/%Y')
+    if !edd.nil?
+      erb :"edd/show", :locals => {:edd => EDD.new(edd)}
+    end
   else
     erb :"edd/new"
   end

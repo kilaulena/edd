@@ -4,9 +4,9 @@ require 'date'
 class EDD
   attr_accessor :now, :edd, :weeks_left, :days_left, :week, :day
 
-  def initialize(year, month, day, today=Date.today)
+  def initialize(edd, today=Date.today)
     @now = Date.new(today.year, today.month, today.day)
-    @edd = Date.new(year, month, day)
+    @edd = edd
 
     difference = edd - now
 
