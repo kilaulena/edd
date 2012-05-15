@@ -2,7 +2,7 @@
 <br/>
 <%= "Today is #{edd.now.strftime("%d. %B %Y")}" %>
 
-<div class="week"><%= "#{edd.week}/#{edd.day}" %></div>
+<div class="week"><%= "#{edd.week}+#{edd.day}" %></div>
 
 <% if edd.now > edd.edd %>
   <%= "EDD was #{-edd.weeks_left} weeks and #{-edd.days_left} days ago" %>
